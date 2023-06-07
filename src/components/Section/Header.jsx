@@ -18,7 +18,7 @@ const Header = () => {
         <li><Link to='/classes'>Classes</Link></li>
         {
             user?.email ? <>
-                <li><Link >DashBoard</Link></li>
+                <li><Link to="/dashboard/myClass">DashBoard</Link></li>
                 <div className='cursor-pointer flex justify-center items-center'>
                     <div className="tooltip" data-tip={user?.displayName}>
                         <img id='title' src={user?.photoURL} className='rounded' width={'30px'} height={'30px'} />

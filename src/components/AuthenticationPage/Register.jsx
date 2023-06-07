@@ -3,16 +3,17 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocailLogin from "./SocailLogin";
 import { useContext, useState } from "react";
 import { AuthContext } from "./AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
     const from = location?.state?.from?.pathname || "/";
     const [success, setSuccess] = useState(null);
     const [error, setError] = useState(null);
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         const { password, confirmPassword } = data;
         if (password === confirmPassword) {
@@ -20,14 +21,40 @@ const Register = () => {
                 .then(result => {
                     const loggedUser = result.user;
                     console.log(loggedUser);
-                    setError('')
-                    setSuccess("User Login Successfully !")
-                    navigate(from, { replace: true })
+                    updateUserProfile(data.name, data.photoURL)
+                        .then(() => {
+                            const saveUser = { name: data.name, email: data.email }
+                            fetch('http://localhost:5000/users', {
+                                method: 'POST',
+                                headers: {
+                                    'content-type': 'application/json'
+                                },
+                                body: JSON.stringify(saveUser)
+                            })
+                                .then(res => res.json())
+                                .then(data => {
+                                    if (data.insertedId) {
+                                        reset();
+                                        Swal.fire({
+                                            position: 'top-end',
+                                            icon: 'success',
+                                            title: 'User created successfully.',
+                                            showConfirmButton: false,
+                                            timer: 1500
+                                        });
+                                        navigate('/');
+                                        setSuccess("User Login Successfully !")
+                                        // navigate(from, { replace: true })
+                                    }
+                                })
+
+                        })
                 })
                 .catch(error => {
                     setSuccess('')
                     setError(error.message);
                 })
+
         }
 
 
@@ -57,7 +84,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Photo</span>
                                 </label>
-                                <input type="text" {...register("photo", { required: true })} placeholder="Photo URL" className="input input-bordered" />
+                                <input type="text" {...register("photoURL", { required: true })} placeholder="Photo URL" className="input input-bordered" />
                                 {errors.photo && <span className=" text-red-500">Photo is required</span>}
                             </div>
                             <div className="form-control">

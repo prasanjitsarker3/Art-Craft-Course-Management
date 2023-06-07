@@ -4,8 +4,10 @@ import Home from "../components/Page/HomePage/Home";
 import Login from "../components/AuthenticationPage/Login";
 import Register from "../components/AuthenticationPage/Register";
 import Instructor from "../components/Page/Instructor/Instructor";
-import PrivateRoute from "./PrivateRoute";
 import Classes from "../components/Page/Classes/Classes";
+import Dashboard from "../components/Page/DashBoard/DashBoardPage/Dashboard";
+import MyClass from "../components/Page/DashBoard/DashBoardPage/MyClass";
+import AllUser from "../components/Page/DashBoard/DashBoardPage/AllUser";
 
 const router = createBrowserRouter([
     {
@@ -18,11 +20,11 @@ const router = createBrowserRouter([
             },
             {
                 path: 'instructor',
-                element: <PrivateRoute><Instructor></Instructor></PrivateRoute>
+                element: <Instructor></Instructor>
             },
             {
                 path: 'classes',
-                element: <PrivateRoute><Classes></Classes></PrivateRoute>
+                element: <Classes></Classes>
             },
             {
                 path: "login",
@@ -31,6 +33,24 @@ const router = createBrowserRouter([
             , {
                 path: "register",
                 element: <Register></Register>
+            }
+            ,{
+                path:"dashboard",
+                element:<Dashboard></Dashboard>
+            }
+        ]
+    },
+    {
+        path:"dashboard",
+        element:<Dashboard></Dashboard>,
+        children:[
+            {
+                path:"myClass",
+                element:<MyClass></MyClass>
+            },
+            {
+                path:"alluser",
+                element:<AllUser></AllUser>
             }
         ]
     }
