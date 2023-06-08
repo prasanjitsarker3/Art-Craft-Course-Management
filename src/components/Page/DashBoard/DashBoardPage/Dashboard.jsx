@@ -1,10 +1,13 @@
 import { Link, Outlet } from "react-router-dom";
+import useAdmin from "../../../../hooks/useAdmin";
 // import useCart from "../../../../Firebase/useCart";
 
 
 const Dashboard = () => {
     // const [carts] = useCart();
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
+    console.log(isAdmin);
+    // const isAdmin=true;
     return (
         <div className="">
             <div className="drawer lg:drawer-open">
@@ -25,10 +28,14 @@ const Dashboard = () => {
                                 <li><Link to='/dashboard/alluser'>All User</Link></li>
                                 <li><Link to='/dashboard/myClass'>My Classes</Link></li>
                                 <li><Link to="/dashboard/enroll">My Enrolled Classes</Link></li>
+
                             </> : <>
                                 <li><Link to='/'>User Home</Link></li>
                                 <li><Link to='/dashboard/myClass'>My Classes</Link></li>
-                                <li><Link to="/dashboard/enroll">My Enrolled Classes</Link></li></>
+                                <li><Link to="/dashboard/enroll">My Enrolled Classes</Link></li>
+                            </>
+
+
                         }
 
                         <div className="divider"></div>

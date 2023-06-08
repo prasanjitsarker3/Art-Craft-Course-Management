@@ -1,11 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import { FaTrash, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 const AllUser = () => {
+    const [axiosSecure]=useAxiosSecure();
     const { data: users = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch('http://localhost:5000/users')
-        return res.json()
+        const res = await axiosSecure.get('/users')
+        return res.data;
     })
     const handleMakeAdmin = (user) => {
         fetch(`http://localhost:5000/users/admin/${user._id}`, {
@@ -26,6 +28,7 @@ const AllUser = () => {
                 }
             })
     }
+    console.log(users);
     const handleDelete = (user) => {
         Swal.fire({
             title: 'Are you sure?',
@@ -43,7 +46,7 @@ const AllUser = () => {
                     .then(res => res.json())
                     .then(data => {
                         if (data.deletedCount > 0) {
-                            refetch();
+                            refetch(); 
                             Swal.fire(
                                 'Deleted!',
                                 'Your file has been deleted.',
@@ -76,6 +79,7 @@ const AllUser = () => {
                         <tbody>
                             {
                                 users.map((user, index) => <tr key={user._id}>
+                                    
                                     <th>{index + 1}</th>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
