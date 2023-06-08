@@ -1,18 +1,21 @@
 import { Link, Outlet } from "react-router-dom";
 import useAdmin from "../../../../hooks/useAdmin";
+import useInstructorPanel from "../../../../hooks/useInstructorPanel";
 // import useCart from "../../../../Firebase/useCart";
 
 
 const Dashboard = () => {
     // const [carts] = useCart();
     const [isAdmin] = useAdmin();
-    console.log(isAdmin);
+    const [isInstructor]=useInstructorPanel();
+    console.log(isInstructor);
+    // console.log(isAdmin);
     // const isAdmin=true;
     return (
         <div className="">
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col pt-10 pl-10">
+                <div className="drawer-content flex flex-col pt-10">
                     <Outlet></Outlet>
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">
                         Open drawer
@@ -25,8 +28,8 @@ const Dashboard = () => {
                         {
                             isAdmin ? <>
                                 <li><Link to='/'>Admin Home</Link></li>
-                                <li><Link to='/dashboard/alluser'>All User</Link></li>
-                                <li><Link to='/dashboard/myClass'>My Classes</Link></li>
+                                <li><Link to='/dashboard/alluser'>Manage User</Link></li>
+                                <li><Link to='/dashboard/manageClass'>Manage Class</Link></li>
                                 <li><Link to="/dashboard/enroll">My Enrolled Classes</Link></li>
 
                             </> : <>

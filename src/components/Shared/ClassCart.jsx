@@ -2,11 +2,13 @@ import { useContext } from "react";
 import { AuthContext } from "../AuthenticationPage/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
+import useAdmin from "../../hooks/useAdmin";
 
 const ClassCart = ({ instructor }) => {
     const { user } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate()
+    const [isAdmin] = useAdmin();
     const { name, image, className, price, seats, email, _id } = instructor;
     const handleAddToCart = (instructor) => {
         if (user && user.email) {
@@ -60,9 +62,11 @@ const ClassCart = ({ instructor }) => {
                         <p className="pl-12">Price: {price}</p>
                         <p>Seats: {seats}</p>
                     </div>
-                    <div className="card-actions">
-                        <button onClick={() => handleAddToCart(instructor)} className="btn btn-primary w-full mx-auto">Select</button>
-                    </div>
+                    {
+                        isAdmin ? <><button className="btn btn-outline btn-info disabled ">Disable</button></> : <><div className="card-actions">
+                            <button onClick={() => handleAddToCart(instructor)} className="btn btn-primary w-full mx-auto">Select</button>
+                        </div></>
+                    }
                 </div>
             </div>
         </div>

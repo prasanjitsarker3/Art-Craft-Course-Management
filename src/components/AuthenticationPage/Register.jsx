@@ -103,7 +103,7 @@ const Register = () => {
                                     required: true, minLength: 6, maxLength: 20
                                 })} placeholder="Enter Password" className="input input-bordered" />
                                 <p className=" rounded-lg p-1 cursor-pointer" onClick={handleTogglePasswordVisibility}>
-                                    {showPassword ? 'Hide' : 'Show'}
+                                    {showPassword ? 'Show' : 'Hide'}
 
                                 </p>
                                 {errors.password && <span className=" text-red-500">Password Length 6 to  </span>}

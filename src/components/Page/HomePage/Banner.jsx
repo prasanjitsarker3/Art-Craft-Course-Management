@@ -13,17 +13,17 @@ const Banner = () => {
                           <p className="text-lg font-bold py-2"> Unleash your imagination and explore the world of art and craft.</p>
                           <p className="font-semibold ">Art is often seen as a form of self-expression, allowing individuals to.</p>
                           <p className="font-semibold "> communicate their thoughts, emotions, and ideas visually</p>
-                          <button className="btn btn-error">Error</button>
+                          <button className="btn btn-error opacity-100">Error</button>
                     </div>
                 </div>
                 <div id="item2" className="carousel-item w-full">
-                    <img src="https://artcrafts.wpengine.com/creative-crafts/wp-content/uploads/sites/2/2017/06/gal7.jpg" className="w-full h-[450px]" />
+                    <img src="https://artcrafts.wpengine.com/creative-crafts/wp-content/uploads/sites/2/2017/06/gal9.jpg" className="w-full h-[450px]" />
                 </div>
                 <div id="item3" className="carousel-item w-full">
-                    <img src="https://artcrafts.wpengine.com/creative-crafts/wp-content/uploads/sites/2/2017/06/gal7.jpg" className="w-full h-[450px]" />
+                    <img src="https://img.freepik.com/free-photo/abstract-nature-painted-with-watercolor-autumn-leaves-backdrop-generated-by-ai_188544-9806.jpg?size=626&ext=jpg&ga=GA1.1.2060036261.1681297115&semt=sph" className="w-full h-[450px]" />
                 </div>
                 <div id="item4" className="carousel-item w-full">
-                    <img src="https://artcrafts.wpengine.com/creative-crafts/wp-content/uploads/sites/2/2017/06/gal7.jpg" className="w-full h-[450px]" />
+                    <img src="https://img.freepik.com/premium-photo/drawing-with-brush-mandala-stone_102290-201.jpg?w=740" className="w-full h-[450px]" />
                 </div>
             </div>
             <div className="flex justify-center w-full py-2 gap-2">

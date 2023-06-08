@@ -11,7 +11,26 @@ const AllUser = () => {
     })
     const handleMakeAdmin = (user) => {
         fetch(`http://localhost:5000/users/admin/${user._id}`, {
-            method: 'PATCH'
+            method: 'PATCH' 
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${user.name} is an Admin Now!`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
+    const handleMakeInstructor =(user)=>{
+        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+            method: 'PATCH' 
         })
             .then(res => res.json())
             .then(data => {
@@ -72,7 +91,8 @@ const AllUser = () => {
                                 <th>#</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Action</th>
+                                <th>Admin</th>
+                                <th>Instructor</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -88,6 +108,12 @@ const AllUser = () => {
                                             <FaUserShield className="h-6 w-6 flex items-center justify-center"></FaUserShield>
                                         </button>
                                     }</td>
+                                    <td>{user.role === 'instructor' ? 'instructor' :
+                                        <button onClick={() => handleMakeInstructor(user)} className="btn btn-circle  bg-[#D1A054]">
+                                            <FaUserShield className="h-6 w-6 flex items-center justify-center"></FaUserShield>
+                                        </button>
+                                    }</td>
+                                   
                                     <td>
                                         <button onClick={() => handleDelete(user)} className="btn btn-circle  bg-[#D1A054]">
                                             <FaTrash className="h-6 w-6 flex items-center justify-center"></FaTrash>
