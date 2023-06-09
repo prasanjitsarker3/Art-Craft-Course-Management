@@ -12,6 +12,7 @@ import ManageClass from "../components/Page/DashBoard/AdminPanel/ManageClass";
 import AddClass from "../components/Page/DashBoard/InstructorPanel/AddClass";
 import MyAddedClass from "../components/Page/DashBoard/InstructorPanel/MyAddedClass";
 import InstructorInfo from "../components/Page/DashBoard/InstructorPanel/InstructorInfo";
+import Payment from "../components/Page/DashBoard/UserPanel/Payment";
 
 const router = createBrowserRouter([
     {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
             {
                 path:"instructor",
                 element:<InstructorInfo></InstructorInfo>
+            },
+            {
+                path:"payment",
+                element:<Payment></Payment>
             }
         ]
     }

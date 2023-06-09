@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import useCart from "../../../../Firebase/useCart";
 import { FaMoneyCheckAlt, FaTrashAlt } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 const MyClass = () => {
     const [carts, refetch] = useCart();
@@ -61,9 +62,11 @@ const MyClass = () => {
                                         <td>{item.className}</td>
                                         <td>{item.price}</td>
                                         <td>
-                                            <button className="btn btn-circle btn-outline">
-                                                <FaMoneyCheckAlt></FaMoneyCheckAlt>
-                                            </button>
+                                            <Link to='payment'>
+                                                <button className="btn btn-circle btn-outline">
+                                                    <FaMoneyCheckAlt></FaMoneyCheckAlt>
+                                                </button>
+                                            </Link>
                                         </td>
                                         <td>
                                             <button onClick={() => handleDelete(item)} className="btn btn-circle btn-outline">

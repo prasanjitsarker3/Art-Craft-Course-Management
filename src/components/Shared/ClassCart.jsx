@@ -2,17 +2,17 @@ import { useContext } from "react";
 import { AuthContext } from "../AuthenticationPage/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
-import useAdmin from "../../hooks/useAdmin";
-import useInstructor from "../../hooks/useInstructor";
+// import useAdmin from "../../hooks/useAdmin";
+// import useInstructor from "../../hooks/useInstructor";
 
-const ClassCart = ({ instructor}) => {
+const ClassCart = ({ instructor }) => {
     // console.log(instructor);
     const { user } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate()
-    const [isAdmin] = useAdmin();
-    const [isInstructor] = useInstructor();
-    const { name, image, className, price, seats, email, _id } = instructor;
+    // const [isAdmin] = useAdmin();
+    // const [isInstructor] = useInstructor();
+    const { name, image, className, price, seats, _id } = instructor;
     const handleAddToCart = (instructor) => {
         if (user && user.email) {
             const cartClass = { classId: _id, name, image, className, price, seats, email: user.email }
@@ -54,27 +54,32 @@ const ClassCart = ({ instructor}) => {
     }
     return (
         <div className="mx-auto">
-           
-                    <div className="card w-96 bg-base-100 shadow-xl">
-                        <figure className="px-7 pt-6">
-                            <img src={image} alt="Shoes" className="rounded-xl h-[200px]" />
-                        </figure>
-                        <div className="card-body ">
-                            <h2 className="text-2xl font-semibold text-center">Course:{className}</h2>
-                            <p className="text-lg text-center">Instructor Name: {name}</p>
-                            <div className="flex justify-between items-center text-lg gap-5">
-                                <p className="pl-12">Price: {price}</p>
-                                <p>Seats: {seats}</p>
-                            </div>
-                            {
-                                isAdmin || isInstructor ? <><button className="btn btn-outline btn-info disabled ">Disable</button></> : <><div className="card-actions">
-                                    <button onClick={() => handleAddToCart(instructor)} className="btn btn-primary w-full mx-auto">Select</button>
-                                </div></>
-                            }
-                        </div>
+
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <figure className="px-7 pt-6">
+                    <img src={image} alt="Shoes" className="rounded-xl h-[200px]" />
+                </figure>
+                <div className="card-body ">
+                    <h2 className="text-2xl font-semibold text-center">Course:{className}</h2>
+                    <p className="text-lg text-center">Instructor Name: {name}</p>
+                    <div className="flex justify-between items-center text-lg gap-5">
+                        <p className="pl-12">Price: {price}</p>
+                        <p>Seats: {seats}</p>
                     </div>
-             
-            
+
+                    <div className="card-actions">
+                        <button onClick={() => handleAddToCart(instructor)} className="btn btn-primary w-full mx-auto">Select</button>
+                    </div>
+                    
+                    {/* {
+                        isAdmin || isInstructor || user ? <><button className="btn btn-outline btn-info disabled ">Disable</button></> : <><div className="card-actions">
+                            <button onClick={() => handleAddToCart(instructor)} className="btn btn-primary w-full mx-auto">Select</button>
+                        </div></>
+                    } */}
+                </div>
+            </div>
+
+
 
         </div>
     );
