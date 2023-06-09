@@ -9,6 +9,9 @@ import Dashboard from "../components/Page/DashBoard/DashBoardPage/Dashboard";
 import MyClass from "../components/Page/DashBoard/DashBoardPage/MyClass";
 import AllUser from "../components/Page/DashBoard/DashBoardPage/AllUser";
 import ManageClass from "../components/Page/DashBoard/AdminPanel/ManageClass";
+import AddClass from "../components/Page/DashBoard/InstructorPanel/AddClass";
+import MyAddedClass from "../components/Page/DashBoard/InstructorPanel/MyAddedClass";
+import InstructorInfo from "../components/Page/DashBoard/InstructorPanel/InstructorInfo";
 
 const router = createBrowserRouter([
     {
@@ -35,27 +38,39 @@ const router = createBrowserRouter([
                 path: "register",
                 element: <Register></Register>
             }
-            ,{
-                path:"dashboard",
-                element:<Dashboard></Dashboard>
+            , {
+                path: "dashboard",
+                element: <Dashboard></Dashboard>
             }
         ]
     },
     {
-        path:"dashboard",
-        element:<Dashboard></Dashboard>,
-        children:[
+        path: "dashboard",
+        element: <Dashboard></Dashboard>,
+        children: [
             {
-                path:"myClass",
-                element:<MyClass></MyClass>
+                path: "myClass",
+                element: <MyClass></MyClass>
             },
             {
-                path:"alluser",
-                element:<AllUser></AllUser>
+                path: "alluser",
+                element: <AllUser></AllUser>
             },
             {
-                path:"manageClass",
-                element:<ManageClass></ManageClass>
+                path: "manageClass",
+                element: <ManageClass></ManageClass>
+            },
+            {
+                path: "addClass",
+                element: <AddClass></AddClass>
+            },
+            {
+                path: "myClasses",
+                element: <MyAddedClass></MyAddedClass>
+            },
+            {
+                path:"instructor",
+                element:<InstructorInfo></InstructorInfo>
             }
         ]
     }

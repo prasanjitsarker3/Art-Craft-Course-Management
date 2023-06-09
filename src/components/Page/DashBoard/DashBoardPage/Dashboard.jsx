@@ -7,10 +7,8 @@ import useInstructorPanel from "../../../../hooks/useInstructorPanel";
 const Dashboard = () => {
     // const [carts] = useCart();
     const [isAdmin] = useAdmin();
-    const [isInstructor]=useInstructorPanel();
-    console.log(isInstructor);
-    // console.log(isAdmin);
-    // const isAdmin=true;
+    const [isInstructor] = useInstructorPanel();
+   
     return (
         <div className="">
             <div className="drawer lg:drawer-open">
@@ -31,6 +29,11 @@ const Dashboard = () => {
                                 <li><Link to='/dashboard/alluser'>Manage User</Link></li>
                                 <li><Link to='/dashboard/manageClass'>Manage Class</Link></li>
                                 <li><Link to="/dashboard/enroll">My Enrolled Classes</Link></li>
+
+                            </> : isInstructor ? <>
+                                <li><Link to='/dashboard/instructor'>Instructor Home</Link></li>
+                                <li><Link to='/dashboard/myClasses'>My Class</Link></li>
+                                <li><Link to='/dashboard/addClass'>Add Class</Link></li>
 
                             </> : <>
                                 <li><Link to='/'>User Home</Link></li>

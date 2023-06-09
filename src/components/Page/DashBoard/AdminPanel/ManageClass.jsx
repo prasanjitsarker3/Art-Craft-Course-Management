@@ -2,8 +2,21 @@ import useClass from "../../../../hooks/useClass";
 
 
 const ManageClass = () => {
-    const [classes] = useClass();
+    const [classes,, refetch] = useClass();
     console.log(classes);
+
+    const handleUpdateMangeClass = (user) => {
+        fetch(`http://localhost:5000/class/pending/${user._id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                refetch();
+            })
+
+
+    }
     return (
         <div>
             <div className="text-center text-2xl text-green-500">
@@ -40,9 +53,10 @@ const ManageClass = () => {
                                     <td>{user.seats}</td>
 
                                     <td>
-                                        <button className="btn btn-outline btn-success">
-                                            Approve
-                                        </button>
+                                        {
+                                            user.status === "pending" ? <><button onClick={() => handleUpdateMangeClass(user)} className="btn btn-outline btn-success">Pending</button></>
+                                                : <><button className="btn btn-outline btn-success">Approved</button></>
+                                        }
                                     </td>
                                     <td>
                                         <button className="btn btn-outline btn-success">
