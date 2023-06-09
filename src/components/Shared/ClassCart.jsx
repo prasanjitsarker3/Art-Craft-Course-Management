@@ -54,8 +54,7 @@ const ClassCart = ({ instructor}) => {
     }
     return (
         <div className="mx-auto">
-            {
-                instructor.status === 'approved' && <>
+           
                     <div className="card w-96 bg-base-100 shadow-xl">
                         <figure className="px-7 pt-6">
                             <img src={image} alt="Shoes" className="rounded-xl h-[200px]" />
@@ -74,8 +73,8 @@ const ClassCart = ({ instructor}) => {
                             }
                         </div>
                     </div>
-                </> 
-            }
+             
+            
 
         </div>
     );

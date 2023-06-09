@@ -1,8 +1,10 @@
+import useAdminMangeClass from "../../../../hooks/useAdminMangeClass";
 import useClass from "../../../../hooks/useClass";
 
 
 const ManageClass = () => {
-    const [classes,, refetch] = useClass();
+    const [classes] = useClass();
+    const [manegeClass, refetch] = useAdminMangeClass();
     console.log(classes);
 
     const handleUpdateMangeClass = (user) => {
@@ -17,10 +19,20 @@ const ManageClass = () => {
 
 
     }
+    const handleUpdateDenyClass = (user) => {
+        fetch(`http://localhost:5000/class/approved/${user._id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                refetch();
+            })
+    }
     return (
         <div>
             <div className="text-center text-2xl text-green-500">
-                <h1>All Classes In This Course: {classes.length}</h1>
+                <h1>All Classes In This Course: {manegeClass.length}</h1>
             </div>
             <div>
                 <div className="overflow-x-auto px-2">
@@ -42,7 +54,7 @@ const ManageClass = () => {
                         </thead>
                         <tbody>
                             {
-                                classes.map((user, index) => <tr key={user._id}>
+                                manegeClass.map((user, index) => <tr key={user._id}>
 
                                     <th>{index + 1}</th>
                                     <th> <img src={user.image} alt="" className="w-[50px] h-[50px]" /></th>
@@ -54,14 +66,15 @@ const ManageClass = () => {
 
                                     <td>
                                         {
-                                            user.status === "pending" ? <><button onClick={() => handleUpdateMangeClass(user)} className="btn btn-outline btn-success">Pending</button></>
+                                            user.status === "pending"? <><button onClick={() => handleUpdateMangeClass(user)} className="btn btn-outline btn-success">Pending</button></>
                                                 : <><button className="btn btn-outline btn-success">Approved</button></>
                                         }
                                     </td>
                                     <td>
-                                        <button className="btn btn-outline btn-success">
-                                            Deny
-                                        </button>
+                                        {
+                                            user.status === "approved" ? <><button onClick={() => handleUpdateDenyClass(user)} className="btn btn-outline btn-success">Deny</button></>
+                                                : <><button   className="btn btn-outline btn-success">Deny !</button></>
+                                        }
                                     </td>
                                     <td>
                                         <button className="btn btn-outline btn-success">

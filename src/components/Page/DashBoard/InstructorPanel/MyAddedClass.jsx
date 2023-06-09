@@ -33,7 +33,8 @@ const MyAddedClass = () => {
                                     <th>{user.seats}</th>
                                     <th>
                                         {
-                                            user.status==='pending'? <><button className="btn btn-active btn-primary">Pending</button></>
+                                            user.status==='pending'? <><button className="btn btn-active btn-primary">Pending</button></>:
+                                            user.status==="deny" ?<><button className="btn btn-active btn-primary">Deny</button></>
                                             :<><button className="btn btn-active btn-primary">Approved</button></>
                                         }
                                     </th>
