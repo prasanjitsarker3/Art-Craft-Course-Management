@@ -25,10 +25,10 @@ const Dashboard = () => {
                         {/* Sidebar content here */}
                         {
                             isAdmin ? <>
-                                <li><Link to='/'>Admin Home</Link></li>
+                                <li><Link to='/dashboard/adminHome'>Admin Home</Link></li>
                                 <li><Link to='/dashboard/alluser'>Manage User</Link></li>
                                 <li><Link to='/dashboard/manageClass'>Manage Class</Link></li>
-                                <li><Link to="/dashboard/enroll">My Enrolled Classes</Link></li>
+                                {/* <li><Link to="/dashboard/enroll">My Enrolled Classes</Link></li> */}
 
                             </> : isInstructor ? <>
                                 <li><Link to='/dashboard/instructor'>Instructor Home</Link></li>
@@ -47,8 +47,8 @@ const Dashboard = () => {
 
                         <div className="divider"></div>
                         <li><Link to='/'>Home</Link></li>
-                        <li><Link>Review</Link></li>
-                        <li><Link>Analysis</Link></li>
+                        <li><Link to="/instructor">Instructor</Link></li>
+                        <li><Link to='/classes'>Class All</Link></li>
                     </ul>
                 </div>
             </div>

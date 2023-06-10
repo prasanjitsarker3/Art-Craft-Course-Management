@@ -16,6 +16,7 @@ import Payment from "../components/Page/DashBoard/UserPanel/Payment";
 import UserHome from "../components/Page/DashBoard/UserPanel/UserHome";
 import History from "../components/Page/DashBoard/UserPanel/History";
 import EnrollClass from "../components/Page/DashBoard/UserPanel/EnrollClass";
+import AdminHome from "../components/Page/DashBoard/AdminPanel/AdminHome";
 
 const router = createBrowserRouter([
     {
@@ -64,6 +65,11 @@ const router = createBrowserRouter([
                 path: "manageClass",
                 element: <ManageClass></ManageClass>
             },
+            {
+                path:"adminHome",
+                element:<AdminHome></AdminHome>
+            }
+            ,
             {
                 path: "addClass",
                 element: <AddClass></AddClass>

@@ -6,13 +6,13 @@ const InstructorInfo = () => {
     return (
         <div className="flex justify-center">
             <div className="text-center w-1/2">
-                <img src={user?.photoURL} alt="" className="text-center rounded-full w-[200px] h-[200px]" />
-                <div className="text-center">
+                <div className="text-center text-2xl font-serif">
+                    <h1 className="py-3 text-green-500">Instructor About Section</h1>
                     <h1>{user?.displayName}</h1>
                     <h1>{user?.email}</h1>
                 </div>
             </div>
-            
+
         </div>
     );
 };
