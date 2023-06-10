@@ -8,7 +8,7 @@ const Dashboard = () => {
     // const [carts] = useCart();
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructorPanel();
-   
+
     return (
         <div className="">
             <div className="drawer lg:drawer-open">

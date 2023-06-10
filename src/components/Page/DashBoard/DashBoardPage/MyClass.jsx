@@ -62,7 +62,7 @@ const MyClass = () => {
                                         <td>{item.className}</td>
                                         <td>{item.price}</td>
                                         <td>
-                                            <Link to='payment'>
+                                            <Link to='/dashboard/payment'>
                                                 <button className="btn btn-circle btn-outline">
                                                     <FaMoneyCheckAlt></FaMoneyCheckAlt>
                                                 </button>
