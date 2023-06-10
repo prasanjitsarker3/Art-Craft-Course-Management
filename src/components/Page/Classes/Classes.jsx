@@ -11,7 +11,7 @@ const Classes = () => {
             </div>
             <div className="grid md:grid-cols-3 gap-5 py-5">
                 {
-                    classes.map(instructor => <ClassCart
+                    classes.map(instructor => <ClassCart 
                         key={instructor._id} instructor={instructor} 
                     ></ClassCart>)
                 }

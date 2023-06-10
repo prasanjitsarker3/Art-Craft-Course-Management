@@ -13,6 +13,9 @@ import AddClass from "../components/Page/DashBoard/InstructorPanel/AddClass";
 import MyAddedClass from "../components/Page/DashBoard/InstructorPanel/MyAddedClass";
 import InstructorInfo from "../components/Page/DashBoard/InstructorPanel/InstructorInfo";
 import Payment from "../components/Page/DashBoard/UserPanel/Payment";
+import UserHome from "../components/Page/DashBoard/UserPanel/UserHome";
+import History from "../components/Page/DashBoard/UserPanel/History";
+import EnrollClass from "../components/Page/DashBoard/UserPanel/EnrollClass";
 
 const router = createBrowserRouter([
     {
@@ -70,12 +73,27 @@ const router = createBrowserRouter([
                 element: <MyAddedClass></MyAddedClass>
             },
             {
-                path:"instructor",
-                element:<InstructorInfo></InstructorInfo>
+                path: "instructor",
+                element: <InstructorInfo></InstructorInfo>
             },
             {
-                path:"payment",
-                element:<Payment></Payment>
+                path: "userHome",
+                element: <UserHome></UserHome>
+            },
+            {
+                path: "history",
+                element: <History></History>
+            }
+            ,
+            {
+                path: "enroll",
+                element: <EnrollClass></EnrollClass>
+            }
+            ,
+            {
+                path: "payment/:id",
+                element: <Payment></Payment>,
+                loader: ({ params }) => fetch(`http://localhost:5000/carts/${params.id}`)
             }
         ]
     }
