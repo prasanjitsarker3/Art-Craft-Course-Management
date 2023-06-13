@@ -17,15 +17,18 @@ import UserHome from "../components/Page/DashBoard/UserPanel/UserHome";
 import History from "../components/Page/DashBoard/UserPanel/History";
 import EnrollClass from "../components/Page/DashBoard/UserPanel/EnrollClass";
 import AdminHome from "../components/Page/DashBoard/AdminPanel/AdminHome";
+import DashBoardAbout from "../components/Page/DashBoard/DashBoardPage/DashBoardAbout";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement:<ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
-                element: <Home></Home>
+                element: <Home></Home> 
             },
             {
                 path: 'instructor',
@@ -53,6 +56,10 @@ const router = createBrowserRouter([
         path: "dashboard",
         element: <Dashboard></Dashboard>,
         children: [
+            {
+                path:"dashboardInfo",
+                element:<DashBoardAbout></DashBoardAbout>
+            },
             {
                 path: "myClass",
                 element: <MyClass></MyClass>

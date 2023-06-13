@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const PopularCart = ({ popular }) => {
-    const { className, image } = popular;
+    const { className, image,enroll} = popular;
     return (
         <div>
             <Link to="/instructor" className="mx-auto">
@@ -11,6 +11,7 @@ const PopularCart = ({ popular }) => {
                     </figure>
                     <div className="card-body items-center text-center">
                         <h2 className="card-title">{className}</h2>
+                        <p>Enroll : {enroll || 0}</p>
                         {/* <p>If a dog chews shoes whose shoes does he choose?</p>
                     <div className="card-actions">
                         <button className="btn btn-primary">Buy Now</button>

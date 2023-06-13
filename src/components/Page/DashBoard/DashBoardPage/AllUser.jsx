@@ -9,6 +9,7 @@ const AllUser = () => {
         const res = await axiosSecure.get('/users')
         return res.data;
     })
+    console.log(users);
     const handleMakeAdmin = (user) => {
         fetch(`http://localhost:5000/users/admin/${user._id}`, {
             method: 'PATCH' 
@@ -40,7 +41,7 @@ const AllUser = () => {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: `${user.name} is an Admin Now!`,
+                        title: `${user.name} is an Instructor Now!`,
                         showConfirmButton: false,
                         timer: 1500
                     })

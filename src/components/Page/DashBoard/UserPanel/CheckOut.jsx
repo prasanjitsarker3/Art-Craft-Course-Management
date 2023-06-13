@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../AuthenticationPage/AuthProvider';
 
 const CheckOut = ({ price, myData }) => {
+    console.log(myData);
     const { user } = useContext(AuthContext);
     const stripe = useStripe();
     const elements = useElements();
@@ -14,6 +15,7 @@ const CheckOut = ({ price, myData }) => {
     const [axiosSecure] = useAxiosSecure();
     const [processing, setProcessing] = useState(false);
     const [transactionId, seTTransactionId] = useState('')
+    const enrolledStudent = 0;
     useEffect(() => {
         axiosSecure.post('/createPayment', { price })
             .then(res => {
@@ -70,8 +72,9 @@ const CheckOut = ({ price, myData }) => {
                 data: new Date(),
                 clsId: myData._id,
                 classIds: myData.classId,
-                className: myData.className,
-                seats: myData.seats
+                className: myData.className, 
+                seats: myData.seats, 
+                enrolledStudent:myData.enroll
 
             }
             axiosSecure.post('/payments', payment)

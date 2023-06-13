@@ -8,6 +8,7 @@ const stripePromise = loadStripe(import.meta.env.VITE_PaymentPK)
 
 const Payment = () => {
     const myData = useLoaderData();
+    console.log("Searching Data",myData);  
     const paymentPrice = myData.price;
     const price = parseInt(paymentPrice)
     return (

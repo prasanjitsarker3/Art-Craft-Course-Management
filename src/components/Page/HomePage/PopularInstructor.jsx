@@ -3,6 +3,7 @@ import PopularInsCart from "./PopularInsCart";
 
 const PopularInstructor = () => {
     const [instructor]=useInstructor();
+    console.log(instructor);
     return (
         <div>
             <div className='py-5 text-center'>

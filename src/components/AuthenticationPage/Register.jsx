@@ -10,7 +10,7 @@ const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
-    const from = location?.state?.from?.pathname || "/";
+    const from = location?.state?.from?.pathname || "/"; 
     const [success, setSuccess] = useState(null);
     const [error, setError] = useState(null);
     const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
@@ -23,7 +23,7 @@ const Register = () => {
                     console.log(loggedUser);
                     updateUserProfile(data.name, data.photoURL)
                         .then(() => {
-                            const saveUser = { name: data.name, email: data.email }
+                            const saveUser = { name: data.name, email: data.email, image:data.photoURL }
                             fetch('http://localhost:5000/users', {
                                 method: 'POST',
                                 headers: {

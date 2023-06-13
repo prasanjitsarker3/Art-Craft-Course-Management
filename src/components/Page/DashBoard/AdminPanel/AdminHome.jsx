@@ -6,7 +6,7 @@ const AdminHome = () => {
     const {user}=useContext(AuthContext);
     return (
         <div>
-            <h1 className="text-center text-2xl text-green-500 py-3">Admin Home Section</h1>
+            <h1 className="text-center text-2xl text-green-500 py-3">Admin Home Section</h1> 
             <div className="flex justify-center items-center">
                 <div className="text-center text-2xl font-serif">
                     <img src={user?.photoURL} alt="" className="h-[100px] rounded-md ml-20" />

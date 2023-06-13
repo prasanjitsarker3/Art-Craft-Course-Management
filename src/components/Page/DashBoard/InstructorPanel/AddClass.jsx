@@ -8,7 +8,7 @@ const AddClass = () => {
     console.log(user?.displayName, user?.email);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        const classData = { name: user?.displayName, email: user?.email, image: data.image, className: data.className, price: data.price, seats: data.seats ,status:"pending"}
+        const classData = {enroll:0, name: user?.displayName, email: user?.email, image: data.image, className: data.className, price: data.price, seats: data.seats ,status:"pending"}
         fetch('http://localhost:5000/class', {
             method: "POST",
             headers: {
@@ -51,7 +51,7 @@ const AddClass = () => {
                             <input placeholder="Price ..." {...register("price", { required: true })} className='h-[50px] px-5 rounded' />
 
                         </div>
-                        {/* errors will return when field validation fails  */}
+                        {/* errors will return when field validation fails  */} 
                         {errors.exampleRequired && <span>This field is required</span>}
                         <div className='py-3 flex justify-center'>
                             <button className="btn btn-wide btn-primary" type='submit'>Add Classes</button>

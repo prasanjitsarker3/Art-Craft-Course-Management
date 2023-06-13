@@ -4,11 +4,11 @@ const EnrollClass = () => {
     const [payments] = usePayment();
     return (
         <div>
-            <h1>Enrollment Classes All:{payments.length}</h1>
+            <h1 className="text-lg text-center text-green-500 font-serif font-bold">Enrollment Classes All:{payments.length}</h1>
             <div className="overflow-x-auto p-12">
                 <table className="table table-zebra">
                     {/* head */}
-                    <thead>
+                    <thead> 
                         <tr className="text-lg font-sans">
                             <th>#</th>
                             <th>Course Name</th>

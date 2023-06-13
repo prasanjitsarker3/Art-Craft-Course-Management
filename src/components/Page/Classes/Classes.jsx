@@ -1,9 +1,11 @@
+
 import useClass from "../../../hooks/useClass";
-import ClassCart from "../../Shared/ClassCart";
+import ClassCart from "../../Shared/ClassCart"; 
 
 
-const Classes = () => {
+const Classes = () => { 
     const [classes] = useClass();
+    console.log("ClassData", classes);
     return (
         <div>
             <div className="py-5 text-center">
