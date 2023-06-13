@@ -19,11 +19,12 @@ import EnrollClass from "../components/Page/DashBoard/UserPanel/EnrollClass";
 import AdminHome from "../components/Page/DashBoard/AdminPanel/AdminHome";
 import DashBoardAbout from "../components/Page/DashBoard/DashBoardPage/DashBoardAbout";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Main></Main>,
+        element: <Main></Main>, 
         errorElement:<ErrorPage></ErrorPage>,
         children: [
             {
@@ -54,7 +55,7 @@ const router = createBrowserRouter([
     },
     {
         path: "dashboard",
-        element: <Dashboard></Dashboard>,
+        element:<PrivateRoute> <Dashboard></Dashboard></PrivateRoute>,
         children: [
             {
                 path:"dashboardInfo",
