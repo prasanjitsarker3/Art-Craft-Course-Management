@@ -64,7 +64,6 @@ const CheckOut = ({ price, myData }) => {
         setProcessing(false)
         if (paymentIntent.status === 'succeeded') {
             seTTransactionId(paymentIntent.id)
-            //save payment information 
             const payment = {
                 email: user?.email,
                 transactionId: paymentIntent.id,
