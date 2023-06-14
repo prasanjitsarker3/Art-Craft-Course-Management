@@ -54,7 +54,7 @@ const MyClass = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {/* row 1 */}
+                          
                             {
                                 carts.map((item, index) =>
                                     <tr key={item._id}> 
