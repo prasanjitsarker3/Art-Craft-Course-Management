@@ -11,7 +11,6 @@ const Banner = () => {
                     <div className=" absolute inset-0 flex justify-center items-center text-center text-white p-5">
                         <div className='bg-black opacity-50 p-5'>
                             <p className="text-2xl font-semibold  pr-10">Explore Art & Craft</p>
-                            {/* <p className="text-lg font-bold py-2"> Unleash your imagination and explore the world of art and craft.</p> */}
                             <p className="font-semibold ">Art is often seen as a form of self-expression, allowing individuals to.</p>
                             <p className="font-semibold "> communicate their thoughts, emotions, and ideas visually</p>
                             <button className="btn btn-error opacity-100">Enroll Class</button>
