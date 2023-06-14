@@ -4,7 +4,7 @@ const PopularInsCart = ({ popular }) => {
     const {name,image}=popular;
     return (
         <Link to="/instructor" className="mx-auto">
-            <div className="card w-96 bg-base-100 cursor-pointer">
+            <div className="card w-96  cursor-pointer">
                 <figure className="px-7 pt-5">
                     <img src={image} alt="Shoes" className="rounded-xl" />
                 </figure>

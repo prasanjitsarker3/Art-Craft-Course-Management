@@ -54,11 +54,11 @@ const ClassCart = ({ instructor }) => {
                 }
             })
         }
-    }
+    } 
     return (
         <div className="mx-auto">
             
-            <div className={`card w-96 bg-base-100 shadow-xl ${seats===0?'bg-red-400':''}`}>
+            <div className={`card w-96  shadow-xl ${seats===0?'bg-red-400':''}`}>
                 <figure className="px-7 pt-6">
                     <img src={image} alt="Shoes" className="rounded-xl h-[200px]" />
                 </figure>

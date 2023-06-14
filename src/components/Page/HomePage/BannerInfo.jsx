@@ -3,7 +3,7 @@ import render from '../../../assets/Lottie/101892-artist (1).json'
 
 const BannerInfo = () => {
     return (
-        <div className="bg-base-200">
+        <div className="">
             <div className="grid md:grid-cols-2 gap-5 p-3">
                 <div className="flex justify-center items-center mx-auto space-y-10">
                     <div className="text-center">

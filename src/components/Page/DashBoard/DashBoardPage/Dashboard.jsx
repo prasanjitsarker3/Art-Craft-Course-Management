@@ -1,6 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 import useAdmin from "../../../../hooks/useAdmin";
 import useInstructorPanel from "../../../../hooks/useInstructorPanel";
+import { FaAddressBook, FaBookOpen, FaEquals, FaHistory, FaHome, FaMoneyCheckAlt, FaPeopleArrows, FaUser } from "react-icons/fa";
 // import useCart from "../../../../Firebase/useCart";
 
 
@@ -25,30 +26,30 @@ const Dashboard = () => {
                         {/* Sidebar content here */}
                         {
                             isAdmin ? <>
-                                <li><Link to='/dashboard/adminHome'>Admin Home</Link></li>
-                                <li><Link to='/dashboard/alluser'>Manage User</Link></li>
-                                <li><Link to='/dashboard/manageClass'>Manage Class</Link></li>
+                                <li><Link to='/dashboard/adminHome'><FaHome></FaHome> Admin Home</Link></li>
+                                <li><Link to='/dashboard/alluser'><FaUser></FaUser>Manage User</Link></li>
+                                <li><Link to='/dashboard/manageClass'><FaBookOpen></FaBookOpen>Manage Class</Link></li>
                                 {/* <li><Link to="/dashboard/enroll">My Enrolled Classes</Link></li> */}
 
                             </> : isInstructor ? <>
-                                <li><Link to='/dashboard/instructor'>Instructor Home</Link></li>
-                                <li><Link to='/dashboard/myClasses'>My Class</Link></li>
-                                <li><Link to='/dashboard/addClass'>Add Class</Link></li>
+                                <li><Link to='/dashboard/instructor'><FaHome></FaHome>Instructor Home</Link></li>
+                                <li><Link to='/dashboard/myClasses'><FaBookOpen></FaBookOpen>My Class</Link></li>
+                                <li><Link to='/dashboard/addClass'><FaAddressBook></FaAddressBook> Add Class</Link></li>
 
                             </> : <>
-                                <li><Link to='/dashboard/userHome'>User Home</Link></li>
-                                <li><Link to='/dashboard/myClass'>My Classes</Link></li>
-                                <li><Link to="/dashboard/enroll">My Enrolled Classes</Link></li>
-                                <li><Link to="/dashboard/history">Payment History</Link></li>
+                                <li><Link to='/dashboard/userHome'><FaHome></FaHome>User Home</Link></li>
+                                <li><Link to='/dashboard/myClass'><FaBookOpen></FaBookOpen>My Classes</Link></li>
+                                <li><Link to="/dashboard/enroll"><FaHistory></FaHistory> My Enrolled Classes</Link></li>
+                                <li><Link to="/dashboard/history"><FaMoneyCheckAlt></FaMoneyCheckAlt> Payment History</Link></li>
                             </>
 
 
                         }
 
                         <div className="divider"></div>
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to="/instructor">Instructor</Link></li>
-                        <li><Link to='/classes'>Class All</Link></li>
+                        <li><Link to='/'><FaHome></FaHome>Home</Link></li>
+                        <li><Link to="/instructor"><FaPeopleArrows></FaPeopleArrows>Instructor</Link></li>
+                        <li><Link to='/classes'><FaEquals></FaEquals>Class All</Link></li>
                     </ul>
                 </div>
             </div>

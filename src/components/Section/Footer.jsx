@@ -5,23 +5,23 @@ const Footer = () => {
             <footer className="footer p-10 bg-neutral text-neutral-content grid md:grid-cols-3">
                 <div className="mx-auto text-center">
                     <span className="footer-title">Services</span>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                    <a className="link link-hover">Daily Video</a>
+                    <a className="link link-hover">Class Test</a>
+                    <a className="link link-hover">Assignment</a>
+                    <a className="link link-hover">Support Session</a>
                 </div>
                 <div className="mx-auto">
                     <span className="footer-title">Company</span>
                     <a className="link link-hover">About us</a>
                     <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
+                    <a className="link link-hover">Address</a>
+                    <a className="link link-hover">Support</a>
                 </div>
                 <div className="mx-auto">
-                    <span className="footer-title">Legal</span>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
+                    <span className="footer-title">Email</span>
+                    <a className="link link-hover">Social Media</a>
+                    <a className="link link-hover">Information</a>
+                    <a className="link link-hover">Feedback</a>
                 </div>
             </footer>
         </div>

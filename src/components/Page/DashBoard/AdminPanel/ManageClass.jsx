@@ -5,6 +5,7 @@ import useClass from "../../../../hooks/useClass";
 const ManageClass = () => {
     const [classes] = useClass();
     const [manegeClass, refetch] = useAdminMangeClass();
+    console.log(manegeClass);
     console.log(classes);
 
     const handleUpdateMangeClass = (user) => {
@@ -47,6 +48,7 @@ const ManageClass = () => {
                                 <th>Email</th>
                                 <th>Price</th>
                                 <th>Seats</th>
+                                <th>Status</th>
                                 <th>Approve</th>
                                 <th>Deny </th>
                                 <th>Feedback</th>
@@ -63,19 +65,22 @@ const ManageClass = () => {
                                     <td>{user.email}</td>
                                     <td>{user.price}</td>
                                     <td>{user.seats}</td>
+                                    <td>{user.status}</td>
 
                                     <td>
-                                        {
-                                            user.status === "pending"? <><button onClick={() => handleUpdateMangeClass(user)} className="btn btn-outline btn-success">Pending</button></>
-                                                : <><button className="btn btn-outline btn-success">Approved</button></>
-                                        }
+                                        
+                                             <button disabled={`${user.status==='approved' || user.status==='deny'?true:''}`} onClick={() => handleUpdateMangeClass(user)} className="btn btn-outline btn-success">Approved</button>
+                                            
+                                        
                                     </td>
+                                    
                                     <td>
-                                        {
-                                            user.status === "approved" ? <><button onClick={() => handleUpdateDenyClass(user)} className="btn btn-outline btn-success">Deny</button></>
-                                                : <><button   className="btn btn-outline btn-success">Deny !</button></>
-                                        }
+                                        
+                                             <button disabled={`${user.status==='approved' || user.status==='deny'?true:''}`} onClick={() => handleUpdateDenyClass(user)} className="btn btn-outline btn-success">Deny</button>
+                                            
+                                        
                                     </td>
+                                
                                     <td>
                                         <button className="btn btn-outline btn-success">
                                             FeedBack

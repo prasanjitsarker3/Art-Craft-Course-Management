@@ -57,7 +57,7 @@ const MyClass = () => {
                             {/* row 1 */}
                             {
                                 carts.map((item, index) =>
-                                    <tr key={item._id}>
+                                    <tr key={item._id}> 
                                         <th>{index + 1}</th>
                                         <td>{item.className}</td>
                                         <td>{item.price}</td>
