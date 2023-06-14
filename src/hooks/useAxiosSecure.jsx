@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../components/AuthenticationPage/AuthProvider";
 import { useEffect } from "react";
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://art-server.vercel.app',
 });
 const useAxiosSecure = () => {
     const { userLogOut } = useContext(AuthContext)

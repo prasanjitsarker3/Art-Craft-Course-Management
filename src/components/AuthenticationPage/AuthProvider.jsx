@@ -39,7 +39,7 @@ const AuthProvider = ({ children }) => {
             console.log(currentUser);
             //Get And Set Token 
             if (currentUser) {
-                axios.post('http://localhost:5000/jwt', { email: currentUser.email })
+                axios.post('https://art-server.vercel.app/jwt', { email: currentUser.email })
                     .then(data => {
                         localStorage.setItem("Access-Token", data.data.token)
                         setLoading(false)

@@ -9,7 +9,7 @@ const AddClass = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         const classData = {enroll:0, name: user?.displayName, email: user?.email, image: data.image, className: data.className, price: data.price, seats: data.seats ,status:"pending"}
-        fetch('http://localhost:5000/class', {
+        fetch('https://art-server.vercel.app/class', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

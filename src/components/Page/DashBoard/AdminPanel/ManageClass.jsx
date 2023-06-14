@@ -9,7 +9,7 @@ const ManageClass = () => {
     console.log(classes);
 
     const handleUpdateMangeClass = (user) => {
-        fetch(`http://localhost:5000/class/pending/${user._id}`, {
+        fetch(`https://art-server.vercel.app/class/pending/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -21,7 +21,7 @@ const ManageClass = () => {
 
     }
     const handleUpdateDenyClass = (user) => {
-        fetch(`http://localhost:5000/class/approved/${user._id}`, {
+        fetch(`https://art-server.vercel.app/class/approved/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())

@@ -7,7 +7,7 @@ const usePayment = () => {
     const { data: payments = [], isLoading: loading, refetch } = useQuery({
         queryKey: ['payments', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/payments/${user?.email}`)
+            const res = await fetch(`https://art-server.vercel.app/payments/${user?.email}`)
             return res.json()
         }
     })

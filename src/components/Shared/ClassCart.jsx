@@ -18,7 +18,7 @@ const ClassCart = ({ instructor }) => {
     const handleAddToCart = (instructor) => {
         if (user && user.email) {
             const cartClass = {enroll:enroll, classId: _id, name, image, className, price, seats, email: user.email }
-            fetch('http://localhost:5000/carts', {
+            fetch('https://art-server.vercel.app/carts', {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"

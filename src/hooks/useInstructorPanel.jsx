@@ -21,7 +21,7 @@ const useInstructorPanel = () => {
     // const { data: isInstructor } = useQuery({
     //     queryKey: ['isInstructor', user?.email],
     //     queryFn: async () => {
-    //         const res = await axios.get(`http://localhost:5000/users/instructor/${user?.email}`)
+    //         const res = await axios.get(`https://art-server.vercel.app/users/instructor/${user?.email}`)
     //         console.log(res.data);
     //         return res.data;
     //     }

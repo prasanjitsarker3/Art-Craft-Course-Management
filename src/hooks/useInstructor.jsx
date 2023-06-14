@@ -4,7 +4,7 @@ const useInstructor = () => {
     const {data:instructor=[], isLoading:loading, refetch}=useQuery({
         queryKey:['instructor'],
         queryFn: async ()=>{
-            const res = await fetch('http://localhost:5000/InsUser')
+            const res = await fetch('https://art-server.vercel.app/InsUser')
             return res.json()
         }
     })
