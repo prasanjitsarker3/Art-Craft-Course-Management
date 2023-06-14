@@ -23,7 +23,6 @@ const Dashboard = () => {
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-5 mt-3 h-full bg-base-200 uppercase">
-                        {/* Sidebar content here */}
                         {
                             isAdmin ? <>
                                 <li><Link to='/dashboard/adminHome'><FaHome></FaHome> Admin Home</Link></li>
