@@ -7,7 +7,6 @@ import useInstructor from "../../hooks/useInstructor";
 import useInstructorPanel from "../../hooks/useInstructorPanel";
 
 const ClassCart = ({ instructor }) => {
-    // console.log(instructor);
     const { user } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate()
