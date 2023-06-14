@@ -69,9 +69,7 @@ const ClassCart = ({ instructor }) => {
                         <p>Seats: {seats}</p>
                     </div>
 
-                    {/* <div className="card-actions">
-                        <button onClick={() => handleAddToCart(instructor)} className="btn btn-primary w-full mx-auto">Select</button>
-                    </div> */}
+                  
 
                     {
                         isAdmin || isInstructor ? <button disabled className="btn btn-outline btn-info disabled ">Select</button> : <div className="card-actions">
