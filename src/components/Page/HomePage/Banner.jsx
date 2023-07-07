@@ -10,21 +10,45 @@ const Banner = () => {
                     <img src="https://artcrafts.wpengine.com/creative-crafts/wp-content/uploads/sites/2/2017/06/gal7.jpg" className="  w-full h-[450px]" />
                     <div className=" absolute inset-0 flex justify-center items-center text-center text-white p-5">
                         <div className='bg-black opacity-50 p-5'>
-                            <p className="text-2xl font-semibold  pr-10">Explore Art & Craft</p>
+                            <p className="text-2xl font-semibold pr-10">Explore Art & Craft</p>
                             <p className="font-semibold ">Art is often seen as a form of self-expression, allowing individuals to.</p>
                             <p className="font-semibold "> communicate their thoughts, emotions, and ideas visually</p>
                             <button className="btn btn-error opacity-100">Enroll Class</button>
-                        </div> 
+                        </div>
+                    </div> 
+                </div>
+                <div id="item2" className="carousel-item w-full relative">
+                    <img src="https://artcrafts.wpengine.com/creative-crafts/wp-content/uploads/sites/2/2017/06/gal9.jpg" className="w-full h-[450px]" />
+                    <div className=" absolute inset-0 flex justify-center items-center text-center text-white p-5">
+                        <div className='bg-black opacity-50 p-5'>
+                            <p className="text-2xl font-semibold pr-10">Explore Art & Craft</p>
+                            <p className="font-semibold ">Art is often seen as a form of self-expression, allowing individuals to.</p>
+                            <p className="font-semibold "> communicate their thoughts, emotions, and ideas visually</p>
+                            <button className="btn btn-error opacity-100">Enroll Class</button>
+                        </div>
                     </div>
                 </div>
-                <div id="item2" className="carousel-item w-full">
-                    <img src="https://artcrafts.wpengine.com/creative-crafts/wp-content/uploads/sites/2/2017/06/gal9.jpg" className="w-full h-[450px]" />
-                </div>
-                <div id="item3" className="carousel-item w-full">
+                <div id="item3" className="carousel-item w-full relative">
                     <img src="https://img.freepik.com/free-photo/abstract-nature-painted-with-watercolor-autumn-leaves-backdrop-generated-by-ai_188544-9806.jpg?size=626&ext=jpg&ga=GA1.1.2060036261.1681297115&semt=sph" className="w-full h-[450px]" />
+                    <div className=" absolute inset-0 flex justify-center items-center text-center text-white p-5">
+                        <div className='bg-black opacity-50 p-5'>
+                            <p className="text-2xl font-semibold pr-10">Explore Art & Craft</p>
+                            <p className="font-semibold ">Art is often seen as a form of self-expression, allowing individuals to.</p>
+                            <p className="font-semibold "> communicate their thoughts, emotions, and ideas visually</p>
+                            <button className="btn btn-error opacity-100">Enroll Class</button>
+                        </div>
+                    </div>
                 </div>
-                <div id="item4" className="carousel-item w-full">
+                <div id="item4" className="carousel-item w-full relative">
                     <img src="https://img.freepik.com/premium-photo/drawing-with-brush-mandala-stone_102290-201.jpg?w=740" className="w-full h-[450px]" />
+                    <div className=" absolute inset-0 flex justify-center items-center text-center text-white p-5">
+                        <div className='bg-black opacity-50 p-5'>
+                            <p className="text-2xl font-semibold pr-10">Explore Art & Craft</p>
+                            <p className="font-semibold ">Art is often seen as a form of self-expression, allowing individuals to.</p>
+                            <p className="font-semibold "> communicate their thoughts, emotions, and ideas visually</p>
+                            <button className="btn btn-error opacity-100">Enroll Class</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="flex justify-center w-full py-2 gap-2">
