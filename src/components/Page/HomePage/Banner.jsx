@@ -1,11 +1,15 @@
 import { motion } from 'framer-motion';
-
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Banner = () => {
-
+    useEffect(() => {
+        AOS.init({});
+    }, [])
     return (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="w-full bg-red-500">
-            <div className="carousel w-full m-0 ">
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="w-full bg-red-500 ">
+            <div  className="carousel w-full m-0 overflow-hidden">
                 <div id="item1" className="carousel-item w-full relative">
                     <img src="https://artcrafts.wpengine.com/creative-crafts/wp-content/uploads/sites/2/2017/06/gal7.jpg" className="  w-full h-[450px]" />
                     <div className=" absolute inset-0 flex justify-center items-center text-center text-white p-5">
@@ -15,7 +19,7 @@ const Banner = () => {
                             <p className="font-semibold "> communicate their thoughts, emotions, and ideas visually</p>
                             <button className="btn btn-error opacity-100">Enroll Class</button>
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 <div id="item2" className="carousel-item w-full relative">
                     <img src="https://artcrafts.wpengine.com/creative-crafts/wp-content/uploads/sites/2/2017/06/gal9.jpg" className="w-full h-[450px]" />

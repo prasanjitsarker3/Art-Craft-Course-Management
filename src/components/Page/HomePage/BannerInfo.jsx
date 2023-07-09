@@ -2,9 +2,12 @@ import Lottie from "lottie-react";
 import render from '../../../assets/Lottie/101892-artist (1).json'
 
 const BannerInfo = () => {
-    return (
+    // data-aos="fade-down"
+    //             data-aos-easing="linear"
+    //             data-aos-duration="1500"
+    return ( 
         <div className="">
-            <div className="grid md:grid-cols-2 gap-5 p-3">
+            <div  className="grid md:grid-cols-2 gap-5 p-3 overflow-hidden">
                 <div className="flex justify-center items-center mx-auto space-y-10">
                     <div className="text-center">
                         <h1 className="text-center text-3xl text-green-500">You Can Easily Development Your Skill</h1>

@@ -5,6 +5,8 @@ import Course from "./Course";
 import PopularClass from "./PopularClass";
 import PopularInstructor from "./PopularInstructor";
 import SiteInformation from "./SiteInformation";
+import Test from "./Test";
+
 
 const Home = () => {
     return (
@@ -15,6 +17,7 @@ const Home = () => {
             <Course></Course>
             <BannerInfo></BannerInfo>
             <SiteInformation></SiteInformation>
+             <Test></Test>
             <Contract></Contract>
         </div>
     );

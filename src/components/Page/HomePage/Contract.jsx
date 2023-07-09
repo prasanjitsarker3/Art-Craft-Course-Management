@@ -13,7 +13,7 @@ const Contract = () => {
         setEmail('');
         setSubject('');
         setMessage('');
-        Swal.fire({ 
+        Swal.fire({
             position: 'center',
             icon: 'success',
             title: 'Thank You,For Your Feedback',
@@ -21,8 +21,10 @@ const Contract = () => {
             timer: 1500
         })
     };
+    // data - aos="fade-up"
+    // data - aos - anchor - placement="bottom-bottom"
     return (
-        <div  className='bg-base-200 py-8'>
+        <div className='bg-base-200 py-8 overflow-hidden'>
             <div className='text-center'>
                 <h1 className='textColor text-3xl font-serif py-5'>Contact Us</h1>
                 <h2 className='text-2xl'>Stay connected with us</h2>
@@ -31,7 +33,7 @@ const Contract = () => {
                 <form className='flex-col justify-center items-center md:px-1 px-10 w-full md:w-1/2 mx-auto'>
                     <input
 
-                       
+
                         type='email'
                         placeholder='Email...'
                         className='input input-bordered w-full mt-3'

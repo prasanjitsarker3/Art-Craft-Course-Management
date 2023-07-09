@@ -1,8 +1,10 @@
 
 const SiteInformation = () => {
     return (
-        <div>
-            < div className="grid lg:grid-cols-4 md:grid-cols-2 text-white font-semibold md:px-1 px-8  gap-5 bg-gradient-to-b from-teal-400 to-teal-600 py-20 my-8">
+        <div className="overflow-hidden">
+            {/* data-aos="fade-up" */}
+                {/* data-aos-anchor-placement="center-bottom" */}
+            < div  className="grid lg:grid-cols-4 md:grid-cols-2 text-white font-semibold md:px-1 px-8  gap-5 bg-gradient-to-b from-teal-400 to-teal-600 py-20 my-8">
                 <div className="flex md:justify-between justify-around items-center">
                     <img className="w-[100px] h-[100px] rounded-full" src="https://img.freepik.com/free-vector/man-teacher-classroom_24877-50508.jpg?size=626&ext=jpg&ga=GA1.2.2060036261.1681297115&semt=sph" alt="" />
                     <div className="text-xl font-sans">
