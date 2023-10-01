@@ -31,12 +31,12 @@ const Header = () => {
     }
 
 
-    const options = <>
+    const options = <> 
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/instructor'>Instructor</Link></li>
+        <li><Link to='/instructor'>Instructor</Link></li> 
         <li><Link to='/classes'>Classes</Link></li>
         {
-            user?.email ? <>
+            user?.email ? <>  
                 <li><Link to="/dashboard/dashboardInfo">DashBoard</Link></li>
                 <div className='cursor-pointer flex justify-center items-center'>
                     <div className="tooltip" data-tip={user?.displayName}>
@@ -62,7 +62,7 @@ const Header = () => {
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className=" text-black font-bold menu menu-compact dropdown-content  p-2 shadow rounded-box w-52 text-base font-serif">
+                        <ul tabIndex={0} className="bg-base-200 text-black font-bold menu menu-compact dropdown-content  p-2 shadow rounded-box w-52 text-base font-serif">
                             {options}
                         </ul>
                     </div>

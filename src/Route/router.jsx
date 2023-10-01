@@ -99,7 +99,7 @@ const router = createBrowserRouter([
                 element: <History></History>
             }
             ,
-            {
+            { 
                 path: "enroll",
                 element: <EnrollClass></EnrollClass>
             }

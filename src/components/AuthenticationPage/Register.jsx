@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocailLogin from "./SocailLogin";
 import { useContext, useState } from "react";
-import { AuthContext } from "./AuthProvider";
+import { AuthContext } from "./AuthProvider"; 
 import Swal from "sweetalert2";
 
 const Register = () => {
@@ -55,7 +55,7 @@ const Register = () => {
                     setError(error.message);
                 })
 
-        }
+        } 
 
 
 

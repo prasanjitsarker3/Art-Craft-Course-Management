@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const MyClass = () => {
     const [carts, refetch] = useCart();
     // console.log(carts);
-    // const {className,price,_id}=carts;
+    // const {className,price,_id}=carts; 
     const handleDelete = (item) => {
         Swal.fire({
             title: 'Are you sure?',

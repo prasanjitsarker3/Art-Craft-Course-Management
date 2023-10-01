@@ -2,3 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
+.cards {
+    border-radius: 20px;
+    border: 8px solid #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.cards img {
+    /* width: 100%;
+    height: 100%; */
+    /* overflow: hidden; */
+    object-fit: cover;
+    border-radius: 15px;
+
+
+}
+
+.cards:hover .card-bodys {
+    right: 0;
+
+}
+
+.card-bodys {
+    /* width: 100%;
+    height: 100%;  */
+    position: absolute;
+    background: #1f3d4738;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    /* color: #fff; */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0;
+    right: -100%;
+    transition: 2s;
+
+}
+
+.card-infos {}
+
+.card-btns {
+    color: white;
+    background: #1C8D73;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    border: none;
+    font-weight: 500px;
+
+}

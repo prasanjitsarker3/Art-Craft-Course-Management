@@ -6,11 +6,11 @@ import { AuthContext } from "./AuthProvider";
 
 const Login = () => {
     const { userLogin } = useContext(AuthContext);
-    const location = useLocation();
-    const navigate = useNavigate();
+    const location = useLocation(); 
+    const navigate = useNavigate(); 
     const from = location?.state?.from?.pathname || "/";
     const [success, setSuccess] = useState(null);
-    const [error, setError] = useState(null)
+    const [error, setError] = useState(null);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         userLogin(data.email, data.password)
@@ -21,7 +21,7 @@ const Login = () => {
                 setSuccess("User Login Successfully !")
                 navigate(from, { replace: true })
             })
-            .catch(error => {
+            .catch(error => { 
                 setSuccess('')
                 setError(error.message);
             })
@@ -29,7 +29,7 @@ const Login = () => {
 
     return (
         <div className="py-2">
-            <div className=" bg-base-200">
+            <div className=" bg-base-200"> 
                 <div className="col md:flex justify-center items-center gap-5 p-5">
                     <div className="text-center md:w-1/2">
                         <img className="h-[400px]" src="https://img.freepik.com/free-vector/sign-concept-illustration_114360-5267.jpg?size=626&ext=jpg&ga=GA1.1.2060036261.1681297115&semt=country_rows_v1" alt="" />

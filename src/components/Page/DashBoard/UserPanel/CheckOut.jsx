@@ -4,7 +4,7 @@ import { useState } from 'react';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 import { useContext } from 'react';
 import { AuthContext } from '../../../AuthenticationPage/AuthProvider';
-
+ 
 const CheckOut = ({ price, myData }) => {
     console.log(myData);
     const { user } = useContext(AuthContext);
